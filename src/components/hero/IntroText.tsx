@@ -1,9 +1,9 @@
 import { IntroTextProps } from '@/types/hero.types';
-import BlurText from './text-blur';
+import BlurText from '../ui/text-blur';
 
 export function IntroText({ greeting, name }: IntroTextProps) {
   return (
-    <div className="text-white/90 uppercase tracking-wide text-sm md:text-base text-left">
+    <div className="text-foreground/90 uppercase tracking-wide text-sm md:text-base text-left">
       <BlurText 
         text={greeting}
         textAlign="left"

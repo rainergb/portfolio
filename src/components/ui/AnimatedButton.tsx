@@ -12,12 +12,13 @@ export function AnimatedButton({
   variant = 'primary',
   delay = 0
 }: AnimatedButtonProps) {
-  const baseClasses = 'relative px-8 py-3 rounded-full font-semibold uppercase tracking-wider text-sm transition-all duration-300 flex items-center gap-2 overflow-hidden group';
+  const baseClasses =
+    "relative px-8 py-3 rounded-full font-semibold uppercase tracking-wider text-sm transition-all duration-300 flex items-center gap-2 overflow-hidden group font-aldrich";
   
   const variantClasses = {
-    primary: 'bg-white text-black border-2 border-white hover:bg-transparent hover:text-white',
-    secondary: 'bg-[#5227FF] text-white border-2 border-[#5227FF] hover:bg-transparent hover:text-[#5227FF]',
-    outline: 'bg-transparent text-white border-2 border-white hover:bg-white hover:text-black'
+    primary: 'bg-foreground text-background border-2 border-foreground hover:bg-transparent hover:text-foreground',
+    secondary: 'bg-[#02a0ff] text-white border-2 border-[#02a0ff] hover:bg-transparent hover:text-[#02a0ff]',
+    outline: 'bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background'
   };
 
   const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;
@@ -37,7 +38,7 @@ export function AnimatedButton({
           {icon}
         </motion.span>
       )}
-      <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+      <span className="absolute inset-0 bg-linear-to-r from-transparent via-foreground/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
     </>
   );
 

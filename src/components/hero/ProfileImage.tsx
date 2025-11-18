@@ -15,7 +15,7 @@ export function ProfileImage({ src, alt, size = 80 }: ProfileImageProps) {
         delay: 0
       }}
     >
-      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white/10">
+      <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-foreground/10">
         <Image
           src={src}
           alt={alt}
