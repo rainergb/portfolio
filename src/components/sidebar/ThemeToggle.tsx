@@ -1,38 +1,21 @@
 'use client';
 
 import { useTheme } from '@/contexts/ThemeContext';
-import { useState } from 'react';
+import { useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
-  // Use layoutEffect to set mounted after first render
-  if (typeof window !== 'undefined' && !mounted) {
-    setMounted(true);
-  }
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
 
   if (!mounted) {
-    return (
-      <button
-        className="relative w-8 h-8 flex items-center justify-center text-foreground transition-colors duration-300"
-        aria-label="Toggle theme"
-        disabled
-      >
-        <div className="relative w-5 h-5">
-          <svg
-            className="absolute inset-0 w-5 h-5 opacity-0"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <circle cx="12" cy="12" r="4" />
-            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
-          </svg>
-        </div>
-      </button>
-    );
+    return <div className="relative w-8 h-8" aria-hidden="true" />;
   }
 
   return (
@@ -45,9 +28,9 @@ export function ThemeToggle() {
         {/* Sun icon */}
         <svg
           className={`absolute inset-0 w-5 h-5 transition-all duration-500 ${
-            theme === 'light' 
-              ? 'opacity-100 rotate-0 scale-100' 
-              : 'opacity-0 rotate-180 scale-0'
+            theme === "light"
+              ? "opacity-100 rotate-0 scale-100"
+              : "opacity-0 rotate-180 scale-0"
           }`}
           fill="none"
           viewBox="0 0 24 24"
@@ -57,13 +40,13 @@ export function ThemeToggle() {
           <circle cx="12" cy="12" r="4" />
           <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
         </svg>
-        
+
         {/* Moon icon */}
         <svg
           className={`absolute inset-0 w-5 h-5 transition-all duration-500 ${
-            theme === 'dark' 
-              ? 'opacity-100 rotate-0 scale-100' 
-              : 'opacity-0 -rotate-180 scale-0'
+            theme === "dark"
+              ? "opacity-100 rotate-0 scale-100"
+              : "opacity-0 -rotate-180 scale-0"
           }`}
           fill="none"
           viewBox="0 0 24 24"
