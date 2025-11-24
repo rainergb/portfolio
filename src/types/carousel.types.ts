@@ -2,7 +2,8 @@ export interface Skill {
   id: string;
   name: string;
   title: string;
-  badges: string[];
+  softSkills: string[];
+  hardSkills: string[];
   imageSrc: string;
   altText?: string;
 }
@@ -29,5 +30,11 @@ export interface CarouselControlsProps {
 export interface ProjectInfoProps {
   title: string;
   name: string;
-  badges: string[];
+  softSkills: string[];
+  hardSkills: string[];
+}
+
+export interface BadgeProps {
+  label: string;
+  variant: "soft" | "hard";
 }

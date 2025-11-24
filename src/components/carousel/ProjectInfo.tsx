@@ -1,6 +1,12 @@
 import { ProjectInfoProps } from "@/types/carousel.types";
+import { Badge } from "./Badge";
 
-export function ProjectInfo({ title, name, badges }: ProjectInfoProps) {
+export function ProjectInfo({
+  title,
+  name,
+  softSkills,
+  hardSkills
+}: ProjectInfoProps) {
   return (
     <div className="mt-8 space-y-2 pb-5">
       <h3 className="text-xl md:text-2xl font-bold leading-tight text-foreground max-w-md">
@@ -10,13 +16,11 @@ export function ProjectInfo({ title, name, badges }: ProjectInfoProps) {
         {name}
       </p>
       <div className="flex flex-wrap gap-2 pt-2">
-        {badges.map((badge, index) => (
-          <span
-            key={index}
-            className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider border border-foreground/20 rounded-full hover:border-foreground/50 hover:bg-foreground/5 transition-all cursor-default"
-          >
-            {badge}
-          </span>
+        {softSkills.map((skill, index) => (
+          <Badge key={`soft-${index}`} label={skill} variant="soft" />
+        ))}
+        {hardSkills.map((skill, index) => (
+          <Badge key={`hard-${index}`} label={skill} variant="hard" />
         ))}
       </div>
     </div>

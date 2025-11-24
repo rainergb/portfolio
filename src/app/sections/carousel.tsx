@@ -19,14 +19,12 @@ export function Carousel({}: CarouselProps) {
   });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setCanScrollPrev(emblaApi.canScrollPrev());
     setCanScrollNext(emblaApi.canScrollNext());
-    setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
   useEffect(() => {
@@ -82,36 +80,40 @@ export function Carousel({}: CarouselProps) {
                 className="overflow-hidden w-full pl-4 md:pl-26"
                 ref={emblaRef}
               >
-                <div className="flex gap-2">
+                <div className="flex gap-6">
                   {portfolioData.map((project, index) => {
-                    const isActive =
-                      index === selectedIndex || index === hoveredIndex;
+                    const isActive = index === 0 && hoveredIndex === null;
+                    const isHovered = index === hoveredIndex;
                     return (
                       <div
                         key={project.id}
                         onClick={() => emblaApi && emblaApi.scrollTo(index)}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
-                        className={`shrink-0 w-80 transition-all duration-500 cursor-pointer group ${
-                          index === selectedIndex
+                        className={`shrink-0 w-80 transition-all duration-900 ease-out cursor-pointer group ${
+                          isActive || isHovered
                             ? "scale-105 z-20"
-                            : "scale-90 z-0 hover:z-20 hover:scale-105"
+                            : "scale-90 z-0"
                         }`}
                       >
                         <div
-                          className={`transition-all duration-300 ${
-                            index === selectedIndex
+                          className={`transition-all duration-700 ease-out ${
+                            isActive || isHovered
                               ? "drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
-                              : "group-hover:drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
+                              : ""
                           }`}
                         >
                           <TiltedCard
                             imageSrc={project.imageSrc}
                             altText={project.altText || project.name}
                             captionText={project.name}
-                            containerHeight={isActive ? "340px" : "320px"}
+                            containerHeight={
+                              isActive || isHovered ? "340px" : "320px"
+                            }
                             containerWidth="100%"
-                            imageHeight={isActive ? "340px" : "320px"}
+                            imageHeight={
+                              isActive || isHovered ? "340px" : "320px"
+                            }
                             imageWidth="320px"
                             scaleOnHover={1.02}
                             rotateAmplitude={10}
@@ -120,16 +122,15 @@ export function Carousel({}: CarouselProps) {
                           />
                         </div>
                         <div
-                          className={`transition-opacity duration-300 ${
-                            index === selectedIndex
-                              ? "opacity-100"
-                              : "opacity-0 group-hover:opacity-100"
+                          className={`transition-opacity duration-700 ease-out ${
+                            isActive || isHovered ? "opacity-100" : "opacity-0"
                           }`}
                         >
                           <ProjectInfo
                             title={project.title}
                             name={project.name}
-                            badges={project.badges}
+                            softSkills={project.softSkills}
+                            hardSkills={project.hardSkills}
                           />
                         </div>
                       </div>
