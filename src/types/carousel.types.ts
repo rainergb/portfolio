@@ -18,3 +18,16 @@ export interface SoftSkillsProps {
 export interface CarouselProps {
   title?: string;
 }
+
+export interface CarouselControlsProps {
+  canScrollPrev: boolean;
+  canScrollNext: boolean;
+  onPrev: () => void;
+  onNext: () => void;
+}
+
+export interface ProjectInfoProps {
+  title: string;
+  name: string;
+  badges: string[];
+}
