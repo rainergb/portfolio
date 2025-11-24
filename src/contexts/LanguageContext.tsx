@@ -13,41 +13,81 @@ interface LanguageContextType {
 const translations = {
   en: {
     // Navbar
-    'nav.home': 'Home',
-    'nav.portfolio': 'Portfolio',
-    'nav.about': 'About',
-    'nav.services': 'Services',
-    'nav.contact': 'Contact',
-    
+    "nav.home": "Home",
+    "nav.portfolio": "Portfolio",
+    "nav.about": "About",
+    "nav.services": "Services",
+    "nav.contact": "Contact",
+
     // Hero Section
-    'hero.greeting': 'Hi, I am',
-    'hero.name': 'Rainer Drummond',
-    'hero.title': 'Developer for Business. Designer for People.',
-    'hero.cta': 'View Services',
-    'hero.contact': 'Get in Touch',
-    
+    "hero.greeting": "Hi, I am",
+    "hero.name": "Rainer Drummond",
+    "hero.title": "Developer for Business. Designer for People.",
+    "hero.cta": "View Services",
+    "hero.contact": "Get in Touch",
+
+    // Carousel Section
+    "carousel.title": "LATEST WORKS",
+    "carousel.project1.title":
+      "SaaS for beauty and wellness business management",
+    "carousel.project1.name": "LYNDUS",
+    "carousel.project1.badges":
+      "UX/UI,WEB APPLICATION,WEB RESPONSIVE,SAAS,STARTUP",
+    "carousel.project2.title": "Project 2 Title",
+    "carousel.project2.name": "PROJECT 2",
+    "carousel.project2.badges": "TAG1,TAG2,TAG3",
+    "carousel.project3.title": "Project 3 Title",
+    "carousel.project3.name": "PROJECT 3",
+    "carousel.project3.badges": "TAG1,TAG2,TAG3",
+    "carousel.project4.title": "Project 4 Title",
+    "carousel.project4.name": "PROJECT 4",
+    "carousel.project4.badges": "TAG1,TAG2,TAG3",
+    "carousel.project5.title": "Project 5 Title",
+    "carousel.project5.name": "PROJECT 5",
+    "carousel.project5.badges": "TAG1,TAG2,TAG3",
+
     // Language Selector
-    'lang.english': 'English',
-    'lang.portuguese': 'Português',
+    "lang.english": "English",
+    "lang.portuguese": "Português"
   },
   pt: {
     // Navbar
-    'nav.home': 'Início',
-    'nav.portfolio': 'Portfólio',
-    'nav.about': 'Sobre',
-    'nav.services': 'Serviços',
-    'nav.contact': 'Contato',
-    
+    "nav.home": "Início",
+    "nav.portfolio": "Portfólio",
+    "nav.about": "Sobre",
+    "nav.services": "Serviços",
+    "nav.contact": "Contato",
+
     // Hero Section
-    'hero.greeting': 'Olá, eu sou',
-    'hero.name': 'Rainer Drummond',
-    'hero.title': 'Dev. para Negócios. Designer para Pessoas.',
-    'hero.cta': 'Ver Serviços',
-    'hero.contact': 'Entre em Contato',
-    
+    "hero.greeting": "Olá, eu sou",
+    "hero.name": "Rainer Drummond",
+    "hero.title": "Dev. para Negócios. Designer para Pessoas.",
+    "hero.cta": "Ver Serviços",
+    "hero.contact": "Entre em Contato",
+
+    // Carousel Section
+    "carousel.title": "ÚLTIMOS TRABALHOS",
+    "carousel.project1.title":
+      "SaaS para gestão e crescimento de negócios de beleza e bem-estar",
+    "carousel.project1.name": "LYNDUS",
+    "carousel.project1.badges":
+      "UX/UI,WEB APPLICATION,WEB RESPONSIVE,SAAS,STARTUP",
+    "carousel.project2.title": "Título do Projeto 2",
+    "carousel.project2.name": "PROJETO 2",
+    "carousel.project2.badges": "TAG1,TAG2,TAG3",
+    "carousel.project3.title": "Título do Projeto 3",
+    "carousel.project3.name": "PROJETO 3",
+    "carousel.project3.badges": "TAG1,TAG2,TAG3",
+    "carousel.project4.title": "Título do Projeto 4",
+    "carousel.project4.name": "PROJETO 4",
+    "carousel.project4.badges": "TAG1,TAG2,TAG3",
+    "carousel.project5.title": "Título do Projeto 5",
+    "carousel.project5.name": "PROJETO 5",
+    "carousel.project5.badges": "TAG1,TAG2,TAG3",
+
     // Language Selector
-    'lang.english': 'English',
-    'lang.portuguese': 'Português',
+    "lang.english": "English",
+    "lang.portuguese": "Português"
   }
 };
 

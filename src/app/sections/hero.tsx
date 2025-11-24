@@ -12,7 +12,7 @@ export function HeroSection() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen bg-background flex items-center justify-center px-6 py-20 transition-colors duration-300">
+    <section className="relative min-h-[85vh] bg-background flex items-center justify-center px-6 py-12 transition-colors duration-300">
       <DotGrid
         dotSize={4}
         gap={32}
@@ -25,12 +25,12 @@ export function HeroSection() {
         className="opacity-[0.5] dark:opacity-50"
       />
       <div className="relative z-10 max-w-7xl w-full flex flex-col items-center">
-        <div className="flex flex-col md:flex-row items-center justify-center md:gap-4 mb-4">
+        <div className="flex flex-col md:flex-row items-center justify-center md:gap-4 mb-3">
           <ProfileImage src="/profile.jpg" alt={t("hero.name")} />
           <IntroText greeting={t("hero.greeting")} name={t("hero.name")} />
         </div>
 
-        <div className="mb-12">
+        <div className="mb-8">
           <HeroTitle title={t("hero.title")} />
         </div>
 
