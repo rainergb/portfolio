@@ -34,11 +34,11 @@ export function Navbar({ logo, languageSelector = true }: NavbarProps) {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-(--navbar-bg) backdrop-blur-md border-b border-(--border-color) py-4'
-          : 'bg-transparent py-8'
+          ? "bg-(--navbar-bg) backdrop-blur-md border-b border-(--border-color) py-4"
+          : "bg-transparent py-8"
       }`}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <div className="flex items-center justify-between">
           <div className="shrink-0">
             <Logo src={logo.src} alt={logo.alt} isScrolled={isScrolled} />
