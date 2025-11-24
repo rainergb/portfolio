@@ -3,7 +3,7 @@ import { ProjectInfoProps } from "@/types/carousel.types";
 export function ProjectInfo({ title, name, badges }: ProjectInfoProps) {
   return (
     <div className="mt-8 space-y-2 pb-5">
-      <h3 className="text-2xl md:text-3xl font-bold leading-tight text-foreground max-w-md">
+      <h3 className="text-xl md:text-2xl font-bold leading-tight text-foreground max-w-md">
         {title}
       </h3>
       <p className="text-sm font-bold tracking-widest text-foreground/50 uppercase">
