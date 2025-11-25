@@ -88,8 +88,6 @@ export function Carousel({}: CarouselProps) {
                       <div
                         key={project.id}
                         onClick={() => emblaApi && emblaApi.scrollTo(index)}
-                        onMouseEnter={() => setHoveredIndex(index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
                         className={`shrink-0 w-80 transition-all duration-900 ease-out cursor-pointer group ${
                           isActive || isHovered
                             ? "scale-105 z-20"
@@ -97,6 +95,8 @@ export function Carousel({}: CarouselProps) {
                         }`}
                       >
                         <div
+                          onMouseEnter={() => setHoveredIndex(index)}
+                          onMouseLeave={() => setHoveredIndex(null)}
                           className={`transition-all duration-700 ease-out ${
                             isActive || isHovered
                               ? "drop-shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
@@ -122,7 +122,7 @@ export function Carousel({}: CarouselProps) {
                           />
                         </div>
                         <div
-                          className={`transition-opacity duration-700 ease-out ${
+                          className={`transition-opacity duration-900 ease-out ${
                             isActive || isHovered ? "opacity-100" : "opacity-0"
                           }`}
                         >
